@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task MRI Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+  <h1>Task MRI Generator</h1>
+  <label for="teamInput">Team:</label>
+  <input type="text" id="teamInput" placeholder="Team name" oninput="saveTeamName(); generateResolution()" required> <br />
+
+  <label for="purpose">Purpose:</label>
+  <input type="text" id="purpose" placeholder="Purpose" oninput="generateResolution()"><br />
+
+  <label for="can">CAN:</label>
+  <input type="text" id="can" placeholder="Customer Account Number" oninput="generateResolution()"><br />
+
+  <label for="ba">BA:</label>
+  <input type="text" id="ba" placeholder="Billing Account" oninput="generateResolution()"><br />
+
+  <label for="invoice">Invoice:</label>
+  <input type="text" id="invoice" placeholder="Invoice Details" oninput="generateResolution()"><br />
+
+  <label for="desc">Description:</label>
+  <input type="text" id="desc" placeholder="Description" oninput="generateResolution()"><br />
+  
+  <div class="checkboxContainer">
+    <input type="checkbox" id="includeDate" checked onchange="saveIncludeDate(); generateResolution()">
+    <label for="includeDate" id="checkBox">Include Today's Date</label>
+  </div>
+
+  <!-- <button onclick="generateResolution()" type="submit">Generate Resolution</button> -->
+  <button id="clearFieldsBtn" onclick="clearFields()">Clear Fields</button>
+
+  <div id="output"></div>
+  <button id="copyToClipboardBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
+  <div id="statusMessage"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

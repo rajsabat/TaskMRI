@@ -1,0 +1,187 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #333;
+    display: inline-block !important;
+    width: 100px;
+}
+
+label#checkBox {
+    width: auto;
+    margin-left: 5px;
+}
+
+input#includeDate {
+    accent-color: #585757;
+    width: auto;
+    height: 1rem;
+    width: 1rem;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
+
+input {
+    background-color: rgb(250, 251, 252);
+    border-color: rgb(205 207 211);
+    color: #333;
+    cursor: text;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    transition: background-color 0.1s ease-in-out 0s, border-color 0.1s ease-in-out 0s;
+    padding: 12px 20px;
+    margin: 5px 0;
+    width: 70%;
+    outline: none;
+}
+
+input[type=text]:hover{
+    background-color: rgb(235, 236, 240);
+}
+
+input[type=text]:focus{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(110, 109, 109);
+    outline: auto;
+}
+
+#includeDate {
+    cursor: auto;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+    width: 50%;
+    margin: 20px auto 0px;
+}
+
+#clearFieldsBtn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#clearFieldsBtn:hover {
+    background-color: #c43227;
+}
+
+#copyToClipboardBtn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#copyToClipboardBtn:hover {
+    background-color: #1a7bca;
+}
+
+#includeDateContainer {
+    display: inline-block;
+}
+
+#statusMessage {
+    margin-top: 10px;
+}
+
+.tuv {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: #dadada;
+    font-size: x-small;
+}
+
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+body.dark-mode h1 {
+    color: #e8e8e8;
+}
+
+body.dark-mode label {
+    color: #cfdddd;
+}
+
+body.dark-mode input, body.dark-mode #output {
+    background-color: #292a2a;
+    border: 1px solid #5b5b5b;
+    color: aliceblue;
+}
+
+body.dark-mode input:hover {
+    background-color: #262727; 
+}
+
+body.dark-mode input:focus {
+    background-color: #1e1f1f; 
+    outline: none;
+    border-color: #bdbdbd;
+}
+
+body.dark-mode input#includeDate {
+    accent-color: #d0cece;
+}
+
+body.dark-mode .tuv {
+    color: #5a5a5a;
+}
