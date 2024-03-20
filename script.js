@@ -22,7 +22,7 @@ function generateResolution() {
   const purposePart = `Purpose: ${purpose} <br />`;
   const canPart = `CAM: ${can} <br />`;
   const baPart = `Billing Account: ${ba} <br />`;
-  const invoicePart = `Invoice: ${invoice}`;
+  const invoicePart = `Invoice: ${invoice} <br />`;
   const descPart = `Description: ${desc}`;
 
   const resolutionOutput = teamNamePart + canPart + baPart + purposePart + invoicePart + descPart;
