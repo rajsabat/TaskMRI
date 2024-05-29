@@ -7,29 +7,6 @@ includeDateCheckbox.checked = savedIncludeDate === null ? true : savedIncludeDat
 
 generateResolution();
 
-function generateResolution() {
-  const team = document.getElementById('teamInput').value || 'Team Name';
-  const can = document.getElementById('can').value || 'N/A';
-  const ba = document.getElementById('ba').value || 'N/A';
-  const purpose = document.getElementById('purpose').value || 'N/A';
-  const invoice = document.getElementById('invoice').value || 'N/A';
-  const desc = document.getElementById('desc').value || 'N/A';
-
-  const includeDate = document.getElementById('includeDate').checked;
-  const formattedDate = includeDate ? formatDate(new Date()) : '';
-
-  const teamNamePart = `${formattedDate ? formattedDate + ' ' : ''} [${team}] <br />`;
-  const purposePart = `Purpose: ${purpose} <br />`;
-  const canPart = `CAM: ${can} <br />`;
-  const baPart = `Billing Account: ${ba} <br />`;
-  const invoicePart = `Invoice: ${invoice} <br />`;
-  const descPart = `Description: ${desc}`;
-
-  const resolutionOutput = teamNamePart + canPart + baPart + purposePart + invoicePart + descPart;
-
-  document.getElementById('output').innerHTML = resolutionOutput;
-}
-
 function saveTeamName() {
   const teamName = document.getElementById('teamInput').value;
   localStorage.setItem('teamName', teamName);
@@ -57,7 +34,7 @@ function copyToClipboard() {
   tempTextArea.value = outputText;
   document.body.appendChild(tempTextArea);
   tempTextArea.select();
-  tempTextArea.setSelectionRange(0, 99999);
+  tempTextArea.setSelectionRange(0, 9999999);
   document.execCommand('copy');
   document.body.removeChild(tempTextArea);
 
@@ -93,4 +70,54 @@ function saveIncludeDate() {
   localStorage.setItem('includeDate', JSON.stringify(includeDateState));
 }
 
+function redirectToPage2() {
+  window.location.href = 'nonBilling.html';
+}
+
+function redirectToPage1() {
+  window.location.href = 'index.html';
+}
+
+function generateResolution() {
+   const team = document.getElementById('teamInput').value || 'Team Name';
+    const can = document.getElementById('can').value || 'N/A';
+    const link = document.getElementById('cseg').value || 'N/A';
+    const soid = document.getElementById('impacted').value || 'N/A';
+    const soType = document.getElementById('job').value || 'N/A';
+    const errmsg = document.getElementById('fmsg').value || 'N/A';
+      const errtrace = document.getElementById('errtrace').value || 'N/A';
+    const errUrL = document.getElementById('gmffile').value || 'Yes';
+    const logloc = document.getElementById('logloc').value || 'N/A';
+    const steps = document.getElementById('kba').value || 'N/A';
+       const assessment = document.getElementById('assessment').value || 'N/A';
+    const just = document.getElementById('just').value || 'N/A';
+    const manAct = document.getElementById('manAct').value || 'N/A';
+    const req = document.getElementById('req').value || 'N/A';
+
+
+    const includeDate = document.getElementById('includeDate').checked;
+    const formattedDate = includeDate ? formatDate(new Date()) : '';
+
+    const teamNamePart = `${formattedDate ? formattedDate + ' ' : ''} [${team}] <br /> <br />`;
+    const canPart = `CAN: ${can} <br /> <br />`;
+    const linkPart = `Customer Segment: ${link} <br /> <br />`;
+    const soidPart = `Accounts Impacted ${soid} <br /> <br />`;
+    const soTypePart = `Failed Job Name: ${soType} <br /> <br />`;
+    const errmsgPart = `Failure Message: ${errmsg} <br /> <br />`;
+     const errTracePart = `Error Stack Trace: ${errtrace} <br /> <br />`;
+    const errUrlPart = `XML & GMF File Attched : ${errUrL} <br /> <br />`;
+    const loglocPart = `Log File Location: ${logloc} <br /> <br />`;
+    const stepsPart = `KBA Followed For FLA : ${steps} <br /> <br />`;
+    const assessmentPart = `L2 Initial Assessment: ${assessment} <br /> <br />`;
+     const justPart = `KBA Exists (Yes/No) / Justification : ${just} <br /> <br />`;
+    const manActPart = `Manual Actions Done : ${manAct} <br /> <br />`;
+    const reqPart = `Request Towards NC ${req} <br /> <br />`;
+
+
+    const resolutionOutput = teamNamePart + canPart + linkPart + soidPart + soTypePart + errmsgPart + errTracePart + errUrlPart
+    + loglocPart + stepsPart + assessmentPart + justPart +manActPart + reqPart;
+
+    document.getElementById('output').innerHTML = resolutionOutput;
+
+}
 includeDateCheckbox.addEventListener('change', saveIncludeDate);

@@ -4,6 +4,12 @@ body {
     background-color: #f4f4f4;
     text-align: center;
 }
+#radioDiv {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 h1 {
     color: #333;
@@ -11,14 +17,13 @@ h1 {
 
 label {
     margin-top: 8px;
-    display: flex;
-    align-items: center;
     margin-bottom: 5px;
     color: #333;
-    display: inline-block !important;
-    width: 100px;
+    width: 200px;
+    text-align: right;
+    margin-right: 10px;
+    display: inline-block;
 }
-
 label#checkBox {
     width: auto;
     margin-left: 5px;
@@ -185,3 +190,22 @@ body.dark-mode input#includeDate {
 body.dark-mode .tuv {
     color: #5a5a5a;
 }
+
+#BillingBtn {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#nonBillingBtn {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+

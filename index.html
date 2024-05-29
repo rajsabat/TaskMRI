@@ -7,39 +7,74 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+   <div class="top-bar">
+    <button id="BillingBtn" class="active" onclick="redirectToPage1()">Billing</button>
+    <button id="nonBillingBtn" onclick="redirectToPage2()">Non-Billing</button>
+  </div>
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-  <h1>Task MRI Generator</h1>
-  <label for="teamInput">Team:</label>
-  <input type="text" id="teamInput" placeholder="Team name" oninput="saveTeamName(); generateResolution()" required> <br />
-
-  <label for="purpose">Purpose:</label>
-  <input type="text" id="purpose" placeholder="Purpose" oninput="generateResolution()"><br />
-
-  <label for="can">CAN:</label>
-  <input type="text" id="can" placeholder="Customer Account Number" oninput="generateResolution()"><br />
-
-  <label for="ba">BA:</label>
-  <input type="text" id="ba" placeholder="Billing Account" oninput="generateResolution()"><br />
-
-  <label for="invoice">Invoice:</label>
-  <input type="text" id="invoice" placeholder="Invoice Details" oninput="generateResolution()"><br />
-
-  <label for="desc">Description:</label>
-  <input type="text" id="desc" placeholder="Description" oninput="generateResolution()"><br />
+  </div>
   
-  <div class="checkboxContainer">
-    <input type="checkbox" id="includeDate" checked onchange="saveIncludeDate(); generateResolution()">
-    <label for="includeDate" id="checkBox">Include Today's Date</label>
+  <div id="pageContent">
+    <h1>Task MRI Generator - Billing</h1>
+    <label for="teamInput">Team:</label>
+    <input type="text" id="teamInput" placeholder="Team name" oninput="saveTeamName(); generateResolution()" required> <br />
+
+    <label for="can">CAN:</label>
+    <input type="text" id="can" placeholder="Customer Account Number" oninput="generateResolution()"><br />
+
+    <label for="cseg">Customer Segment:</label>
+    <input type="text" id="cseg" placeholder="Customer Segment" oninput="generateResolution()"><br />
+
+    <label for="impacted">List of Accounts Impacted:</label>
+    <input type="text" id="impacted" placeholder="Accounts Impacted" oninput="generateResolution()"><br />
+
+    <label for="job">Failed Job Name:</label>
+    <input type="text" id="job" placeholder="Job Name" oninput="generateResolution()"><br />
+
+    <label for="fmsg">Failure Message:</label>
+    <input type="text" id="fmsg" placeholder="Failure Message" oninput="generateResolution()"><br />
+
+    <label for="errtrace">Error StackTrace:</label>
+    <input type="text" id="errtrace" placeholder="Error Stack Trace" oninput="generateResolution()"><br />
+
+    <label for="gmffile">XML & GMF File attached</label>
+    <input type="text" id="gmffile" placeholder="Y/N" oninput="generateResolution()"><br />
+
+    <label for="logloc">Log File Location:</label>
+    <input type="text" id="logloc" placeholder="Log File Location" oninput="generateResolution()"><br />
+
+    <label for="kba">KBA Followed for FLA:</label>
+    <input type="text" id="kba" placeholder="e.g KBA3341" oninput="generateResolution()"><br />
+
+    <label for="assessment">Initial L2 Assessment:</label>
+    <input type="text" id="assessment" placeholder="Initial L2 Assessment" oninput="generateResolution()"><br />
+
+    <label for="just">KBA Exists ( yes/no) if yes, justification for task:</label>
+    <input type="text" id="just" placeholder="Justification for task" oninput="generateResolution()"><br />
+
+    <label for="manAct">Manual Actions Done:</label>
+    <input type="text" id="manAct" placeholder="(if any)" oninput="generateResolution()"><br />
+
+    <label for="req">Request towards NC</label>
+    <input type="text" id="req" placeholder="Specify what is expected" oninput="generateResolution()"><br />
+    
+    <div class="checkboxContainer">
+      <input type="checkbox" id="includeDate" checked onchange="saveIncludeDate(); generateResolution()">
+      <label for="includeDate" id="checkBox">Include Today's Date</label>
+    </div>
+
+    <!-- <button onclick="generateResolution()" type="submit">Generate Resolution</button> -->
+    <button id="clearFieldsBtn" onclick="clearFields()">Clear Fields</button>
+
+    <div id="output"></div>
+    <button id="copyToClipboardBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <div id="statusMessage"></div>
   </div>
 
-  <!-- <button onclick="generateResolution()" type="submit">Generate Resolution</button> -->
-  <button id="clearFieldsBtn" onclick="clearFields()">Clear Fields</button>
-
-  <div id="output"></div>
-  <button id="copyToClipboardBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
-  <div id="statusMessage"></div>
+  <div id="bottomLogo" style="text-align: center; margin-top: 20px;">
+    <img src="company_logo.png" alt="Company Logo">
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
