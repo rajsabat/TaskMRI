@@ -121,7 +121,7 @@ function generateResolutionNB() {
   const assessmentPart = `L2 Initial Assessment: ${assessment} <br /> <br />`;
    const justPart = `KBA Exists (Yes/No) / Justification : ${just} <br /> <br />`;
   const manActPart = `Manual Actions Done : ${manAct} <br /> <br />`;
-  const reqPart = `Request Towards NC ${req} <br /> <br />`;
+  const reqPart = `Request Towards NC : ${req} <br /> <br />`;
 
 
   const resolutionOutput = teamNamePart + canPart + linkPart + soidPart + soTypePart + errmsgPart + errTracePart + errUrlPart

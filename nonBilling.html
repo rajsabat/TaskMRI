@@ -8,11 +8,10 @@
 </head>
 <body>
    <div class="top-bar">
-    <button id="Billing" class="active" onclick="redirectToPage1()">Billing</button>
-    <button id="nonBilling" onclick="redirectToPage2()">Non-Billing</button>
+    <button id="Billing" class="neutral-button" onclick="redirectToPage1()">Billing</button>
+    <button id="nonBilling" disabled class ="standard">Non-Billing</button>
   </div>
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-  </div>
   
   <div id="pageContent">
     <h1>Task MRI Generator - Non Billing</h1>
@@ -65,9 +64,9 @@
 
     <!-- <button onclick="generateResolutionNB()" type="submit">Generate Resolution</button> -->
     <button id="clearFieldsBtn" onclick="clearFields()">Clear Fields</button>
+    <button id="copyToClipboardBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
 
     <div id="output"></div>
-    <button id="copyToClipboardBtn" onclick="copyToClipboard()">Copy to Clipboard</button>
     <div id="statusMessage"></div>
   </div>
   
