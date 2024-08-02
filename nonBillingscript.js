@@ -1,4 +1,4 @@
- // Load team name from storage on page load
+// Load team name from storage on page load
 document.getElementById('teamInput').value = localStorage.getItem('teamName');
 
 const includeDateCheckbox = document.getElementById('includeDate');
@@ -29,8 +29,11 @@ function clearFields() {
   document.getElementById('errtrace').value = '';
   document.getElementById('errURL').value = '';
   document.getElementById('logloc').value = '';
-  document.getElementById('steps').value= '';
+  document.getElementById('steps').value = '';
   document.getElementById('assessment').value = '';
+  document.getElementById('actual').value = '';
+  document.getElementById('expected').value = '';
+  document.getElementById('tbapi').value = '';
   document.getElementById('just').value = '';
   document.getElementById('manAct').value = '';
   document.getElementById('req').value = '';
@@ -69,7 +72,7 @@ function toggleTheme() {
 
 const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
 if (isDarkMode) {
-    document.body.classList.add('dark-mode');
+  document.body.classList.add('dark-mode');
 }
 
 const themeToggle = document.querySelector('.theme-toggle');
@@ -95,11 +98,14 @@ function generateResolutionNB() {
   const soid = document.getElementById('soid').value || 'N/A';
   const soType = document.getElementById('soType').value || 'N/A';
   const errmsg = document.getElementById('errmsg').value || 'N/A';
-    const errtrace = document.getElementById('errtrace').value || 'N/A';
+  const errtrace = document.getElementById('errtrace').value || 'N/A';
   const errUrL = document.getElementById('errURL').value || 'N/A';
   const logloc = document.getElementById('logloc').value || 'N/A';
   const steps = document.getElementById('steps').value || 'N/A';
-     const assessment = document.getElementById('assessment').value || 'N/A';
+  const assessment = document.getElementById('assessment').value || 'N/A';
+  const actual = document.getElementById('actual').value || 'N/A';
+  const expected = document.getElementById('expected').value || 'N/A';
+  const tbapi = document.getElementById('tbapi').value || 'N/A';
   const just = document.getElementById('just').value || 'N/A';
   const manAct = document.getElementById('manAct').value || 'N/A';
   const req = document.getElementById('req').value || 'N/A';
@@ -114,18 +120,21 @@ function generateResolutionNB() {
   const soidPart = `Sales Order Id/name ${soid} <br /> <br />`;
   const soTypePart = `Sales Order Type: ${soType} <br /> <br />`;
   const errmsgPart = `Error Message: ${errmsg} <br /> <br />`;
-   const errTracePart = `Error Trace: ${errtrace} <br /> <br />`;
+  const errTracePart = `Error Trace: ${errtrace} <br /> <br />`;
   const errUrlPart = `Error URL: ${errUrL} <br /> <br />`;
   const loglocPart = `Log File Location: ${logloc} <br /> <br />`;
   const stepsPart = `Steps To Reproduce: ${steps} <br /> <br />`;
   const assessmentPart = `L2 Initial Assessment: ${assessment} <br /> <br />`;
-   const justPart = `KBA Exists (Yes/No) / Justification : ${just} <br /> <br />`;
+  const actualPart = `Actual Result: ${actual} <br /> <br />`;
+  const expectedPart = `Expected Result: ${expected} <br /> <br />`;
+  const tbapiPart = `TBAPI issues Req/Response attached?: ${tbapi} <br /> <br />`;
+  const justPart = `KBA Exists (Yes/No) / Justification : ${just} <br /> <br />`;
   const manActPart = `Manual Actions Done : ${manAct} <br /> <br />`;
   const reqPart = `Request Towards NC : ${req} <br /> <br />`;
 
 
   const resolutionOutput = teamNamePart + canPart + linkPart + soidPart + soTypePart + errmsgPart + errTracePart + errUrlPart
-  + loglocPart + stepsPart + assessmentPart + justPart +manActPart + reqPart;
+    + loglocPart + stepsPart + assessmentPart + actualPart + expectedPart + tbapiPart + justPart + manActPart + reqPart;
 
   document.getElementById('output').innerHTML = resolutionOutput;
 }

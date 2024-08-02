@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task MRI Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-   <div class="top-bar">
+  <div class="top-bar">
     <button id="Billing" class="neutral-button" onclick="redirectToPage1()">Billing</button>
-    <button id="nonBilling" disabled class ="standard">Non-Billing</button>
+    <button id="nonBilling" disabled class="standard">Non-Billing</button>
   </div>
   <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-  
+
   <div id="pageContent">
     <h1>Task MRI Generator - Non Billing</h1>
     <label for="teamInput">Team:</label>
-    <input type="text" id="teamInput" placeholder="Team name" oninput="saveTeamName(); generateResolutionNB()" required> <br />
+    <input type="text" id="teamInput" placeholder="Team name" oninput="saveTeamName(); generateResolutionNB()" required>
+    <br />
 
     <label for="can">CAN:</label>
     <input type="text" id="can" placeholder="Customer Account Number" oninput="generateResolutionNB()"><br />
-	
-	<label for="link">BSS Link/ OSS link of related issue :</label>
+
+    <label for="link">BSS Link/ OSS link of related issue :</label>
     <input type="text" id="link" placeholder="( if required )" oninput="generateResolutionNB()"><br />
 
     <label for="soid">Sales Order Id/name:</label>
@@ -32,31 +35,40 @@
 
     <label for="errmsg">Error Message:</label>
     <input type="text" id="errmsg" placeholder="Error Message" oninput="generateResolutionNB()"><br />
-	
-	 <label for="errtrace">Error StackTrace:</label>
+
+    <label for="errtrace">Error StackTrace:</label>
     <input type="text" id="errtrace" placeholder="Error Stack Trace" oninput="generateResolutionNB()"><br />
-	
-	 <label for="errURL">Error URL:</label>
+
+    <label for="errURL">Error URL:</label>
     <input type="text" id="errURL" placeholder="Error URL" oninput="generateResolutionNB()"><br />
-	
-	 <label for="logloc">Log File Location:</label>
+
+    <label for="logloc">Log File Location:</label>
     <input type="text" id="logloc" placeholder="Log File Location" oninput="generateResolutionNB()"><br />
-	
-	 <label for="steps">Steps To Reproduce:</label>
+
+    <label for="steps">Steps To Reproduce:</label>
     <input type="text" id="steps" placeholder="Steps To Reproduce" oninput="generateResolutionNB()"><br />
-	
-	 <label for="assessment">Initial L2 Assessment:</label>
+
+    <label for="assessment">Initial L2 Assessment:</label>
     <input type="text" id="assessment" placeholder="Initial L2 Assessment" oninput="generateResolutionNB()"><br />
-	
-	 <label for="just">KBA Exists ( yes/no) if yes, justification for task:</label>
+
+    <label for="actual">Actual Result:</label>
+    <input type="text" id="actual" placeholder="Actual Result" oninput="generateResolutionNB()"><br />
+
+    <label for="expected">Expected Result:</label>
+    <input type="text" id="expected" placeholder="Expected Result" oninput="generateResolutionNB()"><br />
+
+    <label for="tbapi">TBAPI issues Req/Response attached?:</label>
+    <input type="text" id="tbapi" placeholder="Yes/No" oninput="generateResolutionNB()"><br />
+
+    <label for="just">KBA Exists ( yes/no) if yes, justification for task:</label>
     <input type="text" id="just" placeholder="Justification for task" oninput="generateResolutionNB()"><br />
-	
-	<label for="manAct">Manual Actions Done:</label>
+
+    <label for="manAct">Manual Actions Done:</label>
     <input type="text" id="manAct" placeholder="(if any)" oninput="generateResolutionNB()"><br />
-	
-	<label for="req">Request towards NC</label>
+
+    <label for="req">Request towards NC</label>
     <input type="text" id="req" placeholder="Specify what is expected" oninput="generateResolutionNB()"><br />
-    
+
     <div class="checkboxContainer">
       <input type="checkbox" id="includeDate" checked onchange="saveIncludeDate(); generateResolutionNB()">
       <label for="includeDate" id="checkBox">Include Today's Date</label>
@@ -69,7 +81,7 @@
     <div id="output"></div>
     <div id="statusMessage"></div>
   </div>
-  
+
   <div id="bottomLogo" style="text-align: center; margin-top: 20px;">
     <img src="company_logo.png" alt="Company Logo">
   </div>
@@ -78,4 +90,5 @@
 
   <script src="nonBillingscript.js"></script>
 </body>
+
 </html>
